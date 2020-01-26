@@ -85,3 +85,28 @@ Below is a table of the number of matched keypoints between 2 consecutive images
 | | BRIEF | 86 | 78 | 76 | 85 | 69 | 74 | 76 | 70 | 88 |
 | | FREAK | 65 | 72 | 64 | 66 | 59 | 59 | 64 | 65 | 79 |
 | | SIFT | 82 | 81 | 85 | 93 | 90 | 81 | 82 | 102 | 104 |
+
+# MP.9 Performance Evaluation 3
+
+Below are 2 tables of the time it takes (in milliseconds) for keypoint detection and descriptor extraction. The descriptor extractions are run after an AKAZE keypoint detection.
+
+| Detector | Img 1 | Img 2 | Img 3 | Img 4 | Img 5 | Img 6 | Img 7 | Img 8 | Img 9 | Img 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Shi-Tomasi | 14 | 11 | 11 | 11 | 10 | 9 | 10 | 10 | 11 | 11 |
+| HARRIS | 13 | 11 | 10 | 10 | 10 | 22 | 10 | 12 | 15 | 15 |
+| FAST | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| BRISK | 35 | 30 | 30 | 30 | 29 | 29 | 29 | 29 | 29 | 29 |
+| ORB | 7 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 | 6 |
+| AKAZE | 57 | 52 | 66 | 57 | 65 | 54 | 65 | 59 | 61 | 63 |
+| SIFT | 75 | 72 | 82 | 69 | 76 | 70 | 73 | 69 | 68 | 71 |
+
+| Descriptor | Img 1 | Img 2 | Img 3 | Img 4 | Img 5 | Img 6 | Img 7 | Img 8 | Img 9 | Img 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| BRISK | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| BRIEF | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| ORB | 7 | 7 | 8 | 7 | 7 | 7 | 7 | 7 | 7 | 7 |
+| FREAK | 63 | 34 | 37 | 34 | 36 | 35 | 35 | 44 | 41 | 37 |
+| AKAZE | 54 | 42 | 46 | 64 | 61 | 63 | 53 | 53 | 52 | 68 |
+| SIFT | 16 | 13 | 61 | 17 | 33 | 14 | 17 | 17 | 19 | 18 |
+
+My first recommendation would be the FAST detector with BRIEF descriptor. This is the fastest combination, averaging about 3 milliseconds. Additionally I would recommend the 2 combinations of the ORB detector with either the BRIEF or BRISK descriptors. These combinations are still relatively fast, averaging about 7-8 milliseconds. However, they result in a significantly lower number of keypoint matches, around 65-80, compared to FAST with BRIEF, which results in around 320.  This lower number of keypoint matches means less processing is required in future steps.

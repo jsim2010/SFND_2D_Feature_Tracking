@@ -35,7 +35,7 @@ In `matchDescriptors()`, I implemented a filter to only keep the matches that we
 Below is a table the number of keypoints that each detector was able to find.
 
 | Detector | Img 1 | Img 2 | Img 3 | Img 4 | Img 5 | Img 6 | Img 7 | Img 8 | Img 9 | Img 10 | Neighboorhood size distribution |
-| === | === | === | === | === | === | === | === | === | === | === | === |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Shi-Tomasi | 125 | 118 | 123 | 120 | 120 | 113 | 114 | 123 | 111 | 112 | tiny |
 | HARRIS | 17 | 14 | 18 | 21 | 26 | 43 | 18 | 31 | 26 | 34 | small |
 | FAST | 419 | 427 | 404 | 423 | 386 | 414 | 418 | 406 | 396 | 401 | small |

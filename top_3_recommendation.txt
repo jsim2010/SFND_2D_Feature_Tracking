@@ -1,6 +1,0 @@
-My first recommendation would be the FAST detector with BRIEF descriptor. This is the fastest
-combination, averaging about 3 milliseconds. Additionally I would recommend the 2 combinations of
-the ORB detector with either the BRIEF or BRISK descriptors. These combinations are still
-relatively fast, averaging about 7-8 milliseconds. However, they result in a significantly lower
-number of keypoint matches, around 65-80, compared to FAST with BRIEF, which results in around 320.
-This lower number of keypoint matches means less processing is required in future steps.
